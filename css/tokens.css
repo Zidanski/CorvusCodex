@@ -1,0 +1,94 @@
+/*
+  DESIGN TOKENS DO CORVUS CODEX
+  ------------------------------
+  Aqui ficam TODAS as cores, fontes, espaçamentos e cantos do site.
+  Regra do grupo: nos outros CSS use sempre var(--nome), nunca uma cor fixa (#123456).
+  Quer mudar uma cor? Mude aqui e ela muda no site inteiro.
+
+  Os contrastes foram conferidos (WCAG AA). Se trocar uma cor, confira de novo
+  em https://webaim.org/resources/contrastchecker/
+*/
+
+/* ===== Tema CLARO (padrão) ===== */
+:root {
+  color-scheme: light;
+
+  --cor-fundo: #F2FBFC;          /* ciano bem claro, quase branco */
+  --cor-superficie: #FFFFFF;     /* cartões, campos, formulários */
+  --cor-texto: #14212B;
+  --cor-primaria: #1F5F8B;       /* AZUL: cabeçalho, links, botões principais */
+  --cor-destaque: #2E7D5B;       /* VERDE: ações secundárias, tags, sucesso */
+  --cor-apoio: #7A5230;          /* MARROM: bordas, detalhes, rodapé */
+  --cor-borda: #D6E4E8;          /* borda decorativa (só enfeite) */
+  --cor-borda-campo: #6B7F8C;    /* borda de campos: precisa de contraste 3:1 */
+  --cor-erro: #B3261E;
+  --cor-sobre-primaria: #FFFFFF; /* texto em cima do azul */
+  --cor-sobre-destaque: #FFFFFF; /* texto em cima do verde */
+  --cor-cabecalho: #1F5F8B;
+  --cor-sobre-cabecalho: #FFFFFF;
+  --cor-foco: #1F5F8B;           /* contorno de foco do teclado */
+
+  --sombra: 0 1px 3px rgb(20 33 43 / 0.08), 0 4px 12px rgb(20 33 43 / 0.06);
+  --raio: 0.5rem;
+
+  --fonte-titulo: "Merriweather", Georgia, "Times New Roman", serif;
+  --fonte-texto: "Atkinson Hyperlegible", system-ui, -apple-system, "Segoe UI", Roboto, sans-serif;
+
+  --espaco-1: 0.25rem;
+  --espaco-2: 0.5rem;
+  --espaco-3: 1rem;
+  --espaco-4: 1.5rem;
+  --espaco-5: 2rem;
+  --espaco-6: 3rem;
+
+  --tamanho-toque: 2.75rem;      /* 44px: área mínima de toque */
+  --largura-conteudo: 40rem;
+}
+
+/* ===== Tema ESCURO =====
+   Os mesmos valores aparecem duas vezes:
+   1) quando o usuário clicou no botão de tema (data-theme="dark");
+   2) quando o sistema está escuro e o usuário ainda não escolheu nada. */
+:root[data-theme="dark"] {
+  color-scheme: dark;
+
+  --cor-fundo: #0E1C2B;
+  --cor-superficie: #16283A;
+  --cor-texto: #E8F1F5;
+  --cor-primaria: #6FB3E0;
+  --cor-destaque: #6CCB9C;
+  --cor-apoio: #C49A6C;
+  --cor-borda: #2A3F55;
+  --cor-borda-campo: #7D93A6;
+  --cor-erro: #FF9B8F;
+  --cor-sobre-primaria: #0E1C2B;
+  --cor-sobre-destaque: #0E1C2B;
+  --cor-cabecalho: #13324D;
+  --cor-sobre-cabecalho: #E8F1F5;
+  --cor-foco: #6FB3E0;
+
+  --sombra: 0 1px 3px rgb(0 0 0 / 0.4), 0 4px 12px rgb(0 0 0 / 0.3);
+}
+
+@media (prefers-color-scheme: dark) {
+  :root:not([data-theme="light"]) {
+    color-scheme: dark;
+
+    --cor-fundo: #0E1C2B;
+    --cor-superficie: #16283A;
+    --cor-texto: #E8F1F5;
+    --cor-primaria: #6FB3E0;
+    --cor-destaque: #6CCB9C;
+    --cor-apoio: #C49A6C;
+    --cor-borda: #2A3F55;
+    --cor-borda-campo: #7D93A6;
+    --cor-erro: #FF9B8F;
+    --cor-sobre-primaria: #0E1C2B;
+    --cor-sobre-destaque: #0E1C2B;
+    --cor-cabecalho: #13324D;
+    --cor-sobre-cabecalho: #E8F1F5;
+    --cor-foco: #6FB3E0;
+
+    --sombra: 0 1px 3px rgb(0 0 0 / 0.4), 0 4px 12px rgb(0 0 0 / 0.3);
+  }
+}
