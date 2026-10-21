@@ -1,0 +1,116 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Enviar material — Corvus Codex</title>
+    <link rel="stylesheet" href="css/tokens.css">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Atkinson+Hyperlegible:ital,wght@0,400;0,700;1,400&family=Merriweather:wght@400;700&display=swap">
+    <link rel="stylesheet" href="css/estilo.css">
+    <script src="js/tema.js"></script>
+</head>
+
+<body>
+    <a class="pular-conteudo" href="#conteudo">Pular para o conteúdo</a>
+    <header class="cabecalho">
+        <nav aria-label="Principal">
+            <a href="landing.html">Início</a>
+            <a href="acervo.html">Acervo</a>
+            <a href="pesquisa.html">Pesquisa</a>
+            <a href="enviar.html" aria-current="page">Enviar material</a>
+            <a href="comentarios.html">Comentários</a>
+            <a href="login.html">Login</a>
+            <a href="cadastro.html">Cadastro</a>
+        </nav>
+        <button type="button" class="botao-tema" aria-label="Alternar tema claro/escuro" aria-pressed="false">
+            <span aria-hidden="true">☾</span>
+        </button>
+    </header>
+
+    <main id="conteudo" tabindex="-1">
+        <h1>Enviar material</h1>
+        <p class="introducao">Compartilhe um livro, resumo, apostila ou anotação com a turma. Os campos marcados com <strong>(opcional)</strong> podem ficar em branco.</p>
+
+        <form id="form-material" data-validar data-api>
+            <p class="aviso-formulario" role="status"></p>
+
+            <fieldset>
+                <legend>Sobre o material</legend>
+                <div class="campo">
+                    <label for="titulo">Título</label>
+                    <input type="text" id="titulo" name="titulo" maxlength="120" required>
+                </div>
+                <div class="campo">
+                    <label for="autor">Autor ou origem</label>
+                    <input type="text" id="autor" name="autor" maxlength="120" required aria-describedby="autor-dica">
+                    <p class="dica" id="autor-dica">Quem escreveu o livro, ou de onde veio (ex.: "Anotação de aula").</p>
+                </div>
+                <div class="campo">
+                    <label for="ano">Ano <span class="opcional">(opcional)</span></label>
+                    <input type="number" id="ano" name="ano" min="1000" max="2100" inputmode="numeric">
+                </div>
+                <div class="campo">
+                    <label for="tipo">Tipo</label>
+                    <select id="tipo" name="tipo" required>
+                        <option value="">Escolha o tipo</option>
+                    </select>
+                </div>
+                <div class="campo">
+                    <label for="disciplina">Disciplina</label>
+                    <select id="disciplina" name="disciplina" required>
+                        <option value="">Escolha a disciplina</option>
+                    </select>
+                </div>
+            </fieldset>
+
+            <fieldset>
+                <legend>Conteúdo</legend>
+                <div class="campo">
+                    <label for="descricao">Descrição curta</label>
+                    <textarea id="descricao" name="descricao" rows="3" maxlength="300" required aria-describedby="descricao-dica"></textarea>
+                    <p class="dica" id="descricao-dica">Uma ou duas frases sobre o material. Até 300 caracteres.</p>
+                </div>
+                <div class="campo">
+                    <label for="conteudo-material">Resumo ou anotações <span class="opcional">(opcional)</span></label>
+                    <textarea id="conteudo-material" name="conteudo" rows="8" maxlength="5000" aria-describedby="conteudo-dica"></textarea>
+                    <p class="dica" id="conteudo-dica">Pode escrever o resumo aqui. Cada linha vira um parágrafo.</p>
+                </div>
+                <div class="campo">
+                    <label for="link">Link do material <span class="opcional">(opcional)</span></label>
+                    <input type="url" id="link" name="link" maxlength="300" placeholder="https://" aria-describedby="link-dica">
+                    <p class="dica" id="link-dica">Ex.: um PDF no Google Drive ou uma página da web.</p>
+                </div>
+                <div class="campo">
+                    <label for="tags">Etiquetas <span class="opcional">(opcional)</span></label>
+                    <input type="text" id="tags" name="tags" maxlength="200" aria-describedby="tags-dica">
+                    <p class="dica" id="tags-dica">Separe por vírgulas, ex.: sql, prova, resumo</p>
+                </div>
+            </fieldset>
+
+            <fieldset>
+                <legend>Quem está enviando</legend>
+                <div class="campo">
+                    <label for="enviadoPor">Seu nome</label>
+                    <input type="text" id="enviadoPor" name="enviadoPor" maxlength="60" autocomplete="name" required>
+                </div>
+            </fieldset>
+
+            <div class="botoes">
+                <button type="submit">Enviar material</button>
+                <button type="reset">Limpar</button>
+            </div>
+        </form>
+    </main>
+
+    <footer class="rodape">
+        <p>Corvus Codex · Biblioteca colaborativa de estudos · Centro Universitário Dom Helder</p>
+    </footer>
+    <script src="js/formularios.js"></script>
+    <script src="js/materiais.js"></script>
+    <script src="js/enviar.js"></script>
+</body>
+
+</html>
