@@ -8,41 +8,54 @@
     <link rel="stylesheet" href="css/tokens.css">
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-    <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Atkinson+Hyperlegible:ital,wght@0,400;0,700;1,400&family=Merriweather:wght@700&display=swap">
+    <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Atkinson+Hyperlegible:ital,wght@0,400;0,700;1,400&family=Merriweather:wght@400;700&display=swap">
     <link rel="stylesheet" href="css/estilo.css">
     <script src="js/tema.js"></script>
 </head>
 
 <body>
+    <a class="pular-conteudo" href="#conteudo">Pular para o conteúdo</a>
     <header class="cabecalho">
         <nav aria-label="Principal">
             <a href="login.html">Login</a>
-            <a href="cadastro.html">Cadastro</a>
+            <a href="cadastro.html" aria-current="page">Cadastro</a>
             <a href="landing.html">Página Principal</a>
         </nav>
         <button type="button" class="botao-tema" aria-label="Alternar tema claro/escuro" aria-pressed="false">
             <span aria-hidden="true">☾</span>
         </button>
     </header>
-    <h1>Cadastre-se</h1>
 
-    <form>
-        <fieldset>
-            <legend>Informações de Login</legend>
-            <label for="Email">Email</label>
-            <input type="email" name="Email" id="Email">
-            <br><br>
-            <label for="Senha">Senha</label>
-            <input type="password" id="Senha" name="Senha">
-            <br>
-            <label for="coSenha">Confirmar Senha</label>
-            <input type="password" id="coSenha" name="coSenha">
-            <br><br>
-            <button type="submit">Cadastrar</button>
+    <main id="conteudo" tabindex="-1">
+        <h1>Cadastre-se</h1>
 
-        </fieldset>
-    </form>
+        <form method="post" data-validar data-demo>
+            <fieldset>
+                <legend>Informações de Login</legend>
+                <p class="aviso-formulario" role="status"></p>
+                <div class="campo">
+                    <label for="Email">Email</label>
+                    <input type="email" name="Email" id="Email" autocomplete="email" required>
+                </div>
+                <div class="campo">
+                    <label for="Senha">Senha</label>
+                    <input type="password" id="Senha" name="Senha" autocomplete="new-password" required>
+                </div>
+                <div class="campo">
+                    <label for="coSenha">Confirmar Senha</label>
+                    <input type="password" id="coSenha" name="coSenha" autocomplete="new-password" required data-igual-a="Senha">
+                </div>
+                <div class="botoes">
+                    <button type="submit">Cadastrar</button>
+                </div>
+            </fieldset>
+        </form>
+    </main>
 
+    <footer class="rodape">
+        <p>Corvus Codex · Biblioteca colaborativa de estudos · Centro Universitário Dom Helder</p>
+    </footer>
+    <script src="js/formularios.js"></script>
 </body>
 
 </html>
