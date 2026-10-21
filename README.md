@@ -38,18 +38,65 @@ git pull
 git checkout -b feature/nome-da-tarefa
 ```
 
+> ⚠ O Acervo, a Pesquisa, o envio e os comentários **precisam do `npm start`**. Se você abrir o HTML direto (duplo clique ou Live Server), essas páginas mostram "Não foi possível falar com o servidor".
+
+### As páginas
+
+| Página | O que faz |
+| --- | --- |
+| `landing.html` | Página inicial (abre em `/`) |
+| `acervo.html` | Lista todos os materiais, com filtros por tipo e disciplina |
+| `pesquisa.html` | Procura por palavra (no título, autor, disciplina, etiquetas e resumo). Acentos não importam: "calculo" acha "Cálculo" |
+| `material.html?id=3` | Detalhes de um material e a área de comentários |
+| `enviar.html` | Formulário para enviar um material novo |
+| `comentarios.html` | Os comentários mais recentes de todo o acervo |
+| `login.html`, `cadastro.html` | Ainda são demonstração: não existem contas de verdade |
+| `404.html` | Página de "não encontrada" |
+
 ### Onde fica cada coisa
 
 | Arquivo / pasta | Para que serve |
 | --- | --- |
-| `landing.html` | Página inicial (abre em `/`) |
-| `login.html`, `cadastro.html`, `pesquisa.html` | Demais páginas |
-| `404.html` | Página de "não encontrada" |
 | `css/tokens.css` | **Todas** as cores, fontes e espaçamentos |
 | `css/estilo.css` | Estilo do site (usa as variáveis do tokens.css) |
 | `js/tema.js` | Botão de tema claro/escuro |
 | `js/formularios.js` | Mensagens de erro dos formulários |
-| `server.js` | Servidor local (Express) |
+| `js/materiais.js` | Funções comuns: falar com a API e montar os cartões |
+| `js/acervo.js`, `js/pesquisa.js`, ... | O script de cada página (mesmo nome da página) |
+| `server.js` | Servidor local (Express) e a API |
+| `data/materiais-exemplo.json` | Os dados de exemplo (**fictícios**) |
+| `data/banco.json` | Os dados que o site grava enquanto você testa (criado sozinho, **não vai para o Git**) |
+
+### Os dados (livros fictícios)
+
+Os 12 materiais e 8 comentários que aparecem no site são **inventados**: livros, autores e estudantes não existem. Eles ficam em `data/materiais-exemplo.json`.
+
+Na primeira vez que você roda `npm start`, o servidor copia esse arquivo para `data/banco.json`. Tudo o que você enviar ou comentar vai para o `banco.json`, que fica só no seu computador. Assim os testes de um colega não bagunçam os do outro.
+
+Quer voltar aos dados de exemplo? Desligue o servidor (`Ctrl + C`) e rode:
+
+```bash
+npm run resetar-dados
+```
+
+Quer acrescentar um material de exemplo para todo o grupo? Edite o `data/materiais-exemplo.json`, rode `npm run resetar-dados` e mande no seu PR.
+
+### A API (para quem for mexer no JavaScript)
+
+As páginas conversam com o servidor por estes endereços:
+
+| Método | Endereço | O que faz |
+| --- | --- | --- |
+| GET | `/api/materiais?q=&tipo=&disciplina=` | Lista ou pesquisa materiais |
+| GET | `/api/materiais/3` | Um material, com os comentários |
+| POST | `/api/materiais` | Cria um material |
+| POST | `/api/materiais/3/comentarios` | Comenta no material 3 |
+| GET | `/api/comentarios` | Comentários mais recentes |
+| GET | `/api/opcoes` | Listas de tipos e disciplinas |
+
+Duas regras de segurança que o código já segue (continuem seguindo):
+- O servidor confere todos os dados de novo, mesmo que a página já tenha conferido.
+- Texto que veio de um usuário entra na página com `textContent`, **nunca** com `innerHTML`. Assim, se alguém escrever `<script>` num comentário, aparece como texto e não vira código.
 
 ---
 
