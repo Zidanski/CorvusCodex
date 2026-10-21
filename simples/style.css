@@ -1,1 +1,84 @@
-/* Seu CSS aqui */
+@import url("https://fonts.googleapis.com/css2?family=DM+Sans:wght@400;500;700&family=Source+Serif+4:wght@600&display=swap");
+
+:root {
+  --azul: #1F5A93;
+  --azul-escuro: #0D2741;
+  --azul-claro: #EEF5FB;
+  --fundo: #F4F8FB;
+  --texto: #0F1E2E;
+  --cinza: #4A5B6E;
+  --borda: #CBD6E0;
+}
+
+* {
+  box-sizing: border-box;
+}
+
+body {
+  margin: 0;
+  background: var(--fundo);
+  color: var(--texto);
+  font-family: "DM Sans", Arial, sans-serif;
+  line-height: 1.6;
+}
+
+h1, h2 {
+  font-family: "Source Serif 4", Georgia, serif;
+  color: var(--azul-escuro);
+}
+
+a {
+  color: var(--azul);
+}
+
+nav {
+  background: var(--azul-escuro);
+  padding: 15px 20px;
+}
+
+nav a {
+  color: white;
+  text-decoration: none;
+  margin-right: 20px;
+}
+
+nav a:hover {
+  text-decoration: underline;
+}
+
+main {
+  max-width: 800px;
+  margin: 0 auto;
+  padding: 20px;
+}
+
+label {
+  display: block;
+  margin-top: 10px;
+}
+
+input,
+textarea {
+  width: 100%;
+  max-width: 400px;
+  padding: 8px;
+  border: 1px solid var(--borda);
+  border-radius: 5px;
+  font: inherit;
+}
+
+button {
+  display: block;
+  margin-top: 15px;
+  padding: 8px 20px;
+  background: var(--azul);
+  color: white;
+  border: none;
+  border-radius: 5px;
+  font: inherit;
+  cursor: pointer;
+}
+
+button:hover {
+  background: var(--azul-escuro);
+}
