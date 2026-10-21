@@ -1,0 +1,25 @@
+{
+  "name": "corvus-codex",
+  "version": "1.0.0",
+  "description": "Biblioteca colaborativa de estudos",
+  "main": "server.js",
+  "scripts": {
+    "start": "node server.js",
+    "dev": "node --watch server.js"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/Zidanski/CorvusCodex.git"
+  },
+  "keywords": [],
+  "author": "",
+  "license": "ISC",
+  "type": "commonjs",
+  "bugs": {
+    "url": "https://github.com/Zidanski/CorvusCodex/issues"
+  },
+  "homepage": "https://github.com/Zidanski/CorvusCodex#readme",
+  "dependencies": {
+    "express": "^5.3.0"
+  }
+}
