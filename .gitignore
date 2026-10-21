@@ -1,1 +1,4 @@
 node_modules/
+
+# Dados que o site grava enquanto você testa (cada um tem o seu)
+data/banco.json
