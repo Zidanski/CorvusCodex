@@ -181,7 +181,9 @@ label {
   font-weight: 700;
 }
 
-input {
+input,
+select,
+textarea {
   display: block;
   width: 100%;
   min-height: var(--tamanho-toque);
@@ -193,7 +195,12 @@ input {
   font: inherit;
 }
 
-input[aria-invalid="true"] {
+textarea {
+  resize: vertical;
+  line-height: 1.5;
+}
+
+[aria-invalid="true"] {
   border-color: var(--cor-erro);
   border-width: 3px;
 }
@@ -255,6 +262,233 @@ button[type="reset"] {
 
 .aviso-formulario.sucesso {
   color: var(--cor-destaque);
+}
+
+button:disabled {
+  cursor: wait;
+  opacity: 0.7;
+}
+
+/* Dica embaixo de um campo */
+.dica {
+  margin: var(--espaco-1) 0 0;
+  font-size: 0.875rem;
+}
+
+.opcional {
+  font-weight: 400;
+}
+
+/* Formulário com várias seções (ex.: Enviar material) */
+form > fieldset + fieldset {
+  margin-top: var(--espaco-4);
+}
+
+/* ===== Páginas com lista (Acervo, Pesquisa) ===== */
+main.principal-largo {
+  max-width: 64rem;
+}
+
+.principal-largo > form,
+.principal-largo > .introducao,
+.principal-largo > .nota {
+  max-width: var(--largura-conteudo);
+  margin-left: auto;
+  margin-right: auto;
+}
+
+.introducao,
+.nota {
+  text-align: center;
+}
+
+.nota {
+  margin-top: 0;
+  font-size: 0.875rem;
+  color: var(--cor-apoio);
+}
+
+.filtros-campos {
+  display: grid;
+  gap: 0 var(--espaco-3);
+}
+
+@media (min-width: 36rem) {
+  .filtros-campos {
+    grid-template-columns: 1fr 1fr;
+  }
+}
+
+.filtros .botoes {
+  margin-top: 0;
+}
+
+.contagem {
+  margin: var(--espaco-4) 0 var(--espaco-3);
+  font-weight: 700;
+}
+
+.resultados h2 {
+  margin-top: var(--espaco-5);
+}
+
+/* ===== Cartões de material ===== */
+.lista-cartoes {
+  display: grid;
+  grid-template-columns: repeat(auto-fill, minmax(17rem, 1fr));
+  gap: var(--espaco-3);
+  margin: 0;
+  padding: 0;
+  list-style: none;
+}
+
+.cartao article {
+  display: flex;
+  flex-direction: column;
+  height: 100%;
+  padding: var(--espaco-3) var(--espaco-4);
+  background-color: var(--cor-superficie);
+  border: 1px solid var(--cor-borda);
+  border-left: 4px solid var(--cor-apoio);
+  border-radius: var(--raio);
+  box-shadow: var(--sombra);
+}
+
+.cartao-tipo {
+  margin: 0;
+  font-size: 0.875rem;
+  font-weight: 700;
+  color: var(--cor-apoio);
+}
+
+.cartao-titulo {
+  margin: var(--espaco-1) 0;
+  font-size: 1.125rem;
+  text-align: left;
+}
+
+.cartao-autor,
+.material-autor {
+  margin: 0 0 var(--espaco-2);
+  font-style: italic;
+}
+
+.cartao-descricao {
+  margin: 0 0 var(--espaco-3);
+}
+
+.cartao-rodape {
+  margin: auto 0 0;
+  padding-top: var(--espaco-2);
+  border-top: 1px solid var(--cor-borda);
+  font-size: 0.875rem;
+}
+
+.lista-vazia {
+  grid-column: 1 / -1;
+  padding: var(--espaco-4);
+  text-align: center;
+  background-color: var(--cor-superficie);
+  border: 1px dashed var(--cor-borda-campo);
+  border-radius: var(--raio);
+  list-style: none;
+}
+
+/* ===== Etiquetas (tags) em verde ===== */
+.tags {
+  display: flex;
+  flex-wrap: wrap;
+  gap: var(--espaco-1);
+  margin: 0 0 var(--espaco-3);
+  padding: 0;
+  list-style: none;
+}
+
+.tags li {
+  padding: 0 var(--espaco-2);
+  border: 1px solid var(--cor-destaque);
+  border-radius: 999px;
+  color: var(--cor-destaque);
+  font-size: 0.875rem;
+  font-weight: 700;
+}
+
+.tags li::before {
+  content: "#";
+}
+
+/* ===== Página de um material ===== */
+.voltar {
+  margin: var(--espaco-4) 0 0;
+}
+
+.voltar a {
+  display: inline-flex;
+  align-items: center;
+  min-height: var(--tamanho-toque);
+}
+
+#m-tipo {
+  margin-top: var(--espaco-3);
+  text-align: center;
+}
+
+.titulo-material {
+  margin-top: var(--espaco-1);
+}
+
+.material-autor,
+.material-descricao {
+  text-align: center;
+}
+
+.material-descricao {
+  font-size: 1.125rem;
+}
+
+.material-conteudo {
+  margin: var(--espaco-4) 0;
+  padding: var(--espaco-3) var(--espaco-4);
+  background-color: var(--cor-superficie);
+  border: 1px solid var(--cor-borda);
+  border-left: 4px solid var(--cor-apoio);
+  border-radius: var(--raio);
+}
+
+.link-externo {
+  display: inline-flex;
+  align-items: center;
+  min-height: var(--tamanho-toque);
+  font-weight: 700;
+}
+
+/* ===== Comentários ===== */
+.comentarios {
+  margin-top: var(--espaco-5);
+}
+
+.lista-comentarios {
+  margin: 0 0 var(--espaco-4);
+  padding: 0;
+  list-style: none;
+}
+
+.comentario {
+  margin-bottom: var(--espaco-3);
+  padding: var(--espaco-3);
+  background-color: var(--cor-superficie);
+  border: 1px solid var(--cor-borda);
+  border-radius: var(--raio);
+}
+
+.comentario-autor {
+  margin: 0 0 var(--espaco-1);
+  font-size: 0.875rem;
+}
+
+.comentario-texto {
+  margin: 0;
+  white-space: pre-line;
 }
 
 /* ===== Rodapé ===== */

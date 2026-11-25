@@ -1,0 +1,28 @@
+CORVUS CODEX — FONTES
+=====================
+
+Títulos ........ Source Serif 4 (400, 400 itálico, 600, 600 itálico, 700)
+Texto/interface  DM Sans (400, 400 itálico, 500, 700)
+Código ......... JetBrains Mono (400)
+
+Por que essas fontes?
+A Anthropic usa fontes próprias e pagas (as famílias que dão a cara do Claude),
+que não podem ser redistribuídas num projeto. Escolhemos as alternativas
+gratuitas mais próximas, com o mesmo espírito:
+  - Source Serif 4: serifada editorial, de "livro", para os títulos.
+  - DM Sans: sem serifa geométrica, limpa e muito legível, para o texto.
+Todas usam a licença SIL Open Font License 1.1 (pasta "licencas"), que permite
+usar, embutir e distribuir livremente, inclusive em sites.
+
+Como usar
+1. Copie a pasta inteira para o projeto, por exemplo em: fontes/
+2. No <head> de cada página, ANTES do tokens.css:
+     <link rel="stylesheet" href="fontes/fonts.css">
+3. Nas folhas de estilo, use só as variáveis:
+     font-family: var(--fonte-titulo);   /* títulos */
+     font-family: var(--fonte-texto);    /* texto */
+     font-family: var(--fonte-codigo);   /* código */
+
+Dica de desempenho (opcional): pré-carregue as duas mais usadas:
+  <link rel="preload" href="fontes/arquivos/dm-sans-latin-400-normal.woff2" as="font" type="font/woff2" crossorigin>
+  <link rel="preload" href="fontes/arquivos/source-serif-4-latin-600-normal.woff2" as="font" type="font/woff2" crossorigin>
