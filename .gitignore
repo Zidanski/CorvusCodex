@@ -9,3 +9,6 @@ firebase-debug.log
 
 # Anotacoes e guias locais (nao vao para o GitHub)
 *.md
+
+# Pacote para entrega
+*.zip
