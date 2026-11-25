@@ -1,0 +1,9 @@
+{
+  "hosting": {
+    "public": "simples",
+    "ignore": ["firebase.json", "**/.*", "popular-banco.html", "js/popular-banco.js"]
+  },
+  "firestore": {
+    "rules": "firestore.rules"
+  }
+}

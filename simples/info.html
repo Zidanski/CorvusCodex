@@ -1,0 +1,56 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Info - Corvus Codex</title>
+  <link rel="icon" href="img/favicon.svg" type="image/svg+xml">
+  <link rel="icon" href="img/favicon-32.png" sizes="32x32">
+  <link rel="apple-touch-icon" href="img/apple-touch-icon.png">
+  <link rel="stylesheet" href="style.css">
+</head>
+<body>
+  <header class="topo">
+    <a href="index.html"><img class="logo" src="img/logo-horizontal-branco.svg" alt="Corvus Codex - página inicial"></a>
+    <nav>
+      <a href="index.html">Início</a>
+      <a href="acervo.html">Acervo</a>
+      <a href="pesquisa.html">Pesquisa</a>
+      <a href="enviar.html">Enviar material</a>
+      <a href="comentarios.html">Comentários</a>
+      <a href="info.html" aria-current="page">Info</a>
+    </nav>
+    <div class="usuario">
+      <span id="nome-usuario"></span>
+      <button type="button" id="botao-sair" class="botao-sair">Sair</button>
+    </div>
+  </header>
+
+  <main>
+    <h1>Info</h1>
+    <img class="ilustracao" src="img/corvo.svg" alt="">
+
+    <h2>Sobre o projeto</h2>
+    <p>O Corvus Codex é uma biblioteca colaborativa de estudos: estudantes enviam, pesquisam e comentam
+      livros, resumos e anotações uns dos outros.</p>
+    <p>"Corvus" é corvo em latim, símbolo de inteligência e memória. "Codex" é o livro antigo, o manuscrito.</p>
+    <p>Projeto do curso de Ciência da Computação do Centro Universitário Dom Helder (Belo Horizonte, MG), 2º semestre de 2026.</p>
+
+    <h2>Criadores</h2>
+    <ul>
+      <li>Zidanski Kaniski</li>
+      <li>Othon Braga</li>
+      <li>Moises Airã</li>
+      <li>Pedro Augusto</li>
+      <li>Pedro Paulo</li>
+    </ul>
+
+    <h2>Como foi feito</h2>
+    <p>HTML, CSS e JavaScript puros, com Firebase (login com Google, banco de dados Firestore e hospedagem).</p>
+    <p>Livros de exemplo: textos em domínio público do <a href="https://pt.wikisource.org" target="_blank" rel="noopener">Wikisource</a>
+      e livros com licença livre. Capas: <a href="https://openlibrary.org" target="_blank" rel="noopener">Open Library</a>.</p>
+  </main>
+
+  <script type="module" src="js/info.js"></script>
+</body>
+</html>

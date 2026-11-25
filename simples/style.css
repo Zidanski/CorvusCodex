@@ -8,6 +8,15 @@
   --texto: #0F1E2E;
   --cinza: #4A5B6E;
   --borda: #CBD6E0;
+  --branco: #FFFFFF;
+  --verde: #1E7A4F;
+  --vermelho: #B42318;
+
+  --espaco-p: 0.5rem;
+  --espaco-m: 1rem;
+  --espaco-g: 2rem;
+  --raio: 10px;
+  --sombra: 0 2px 8px rgba(13, 39, 65, 0.08);
 }
 
 * {
@@ -31,20 +40,58 @@ a {
   color: var(--azul);
 }
 
-nav {
+/* Foco visível em tudo que é clicável (acessibilidade) */
+:focus-visible {
+  outline: 3px solid var(--azul);
+  outline-offset: 2px;
+}
+
+/* ---------- Cabeçalho ---------- */
+
+.topo {
+  display: flex;
+  flex-wrap: wrap;
+  align-items: center;
+  gap: var(--espaco-m);
   background: var(--azul-escuro);
-  padding: 15px 20px;
+  padding: var(--espaco-m) var(--espaco-g);
+}
+
+.topo :focus-visible {
+  outline-color: var(--branco);
+}
+
+.logo {
+  display: block;
+  height: 2.5rem;
 }
 
 nav a {
-  color: white;
+  color: var(--branco);
   text-decoration: none;
-  margin-right: 20px;
+  margin-right: var(--espaco-m);
 }
 
-nav a:hover {
+nav a:hover,
+nav a[aria-current="page"] {
   text-decoration: underline;
 }
+
+.usuario {
+  display: flex;
+  align-items: center;
+  gap: var(--espaco-p);
+  margin-left: auto;
+  color: var(--branco);
+}
+
+.botao-sair {
+  margin-top: 0;
+  background: transparent;
+  border: 1px solid var(--branco);
+}
+
+/* ---------- Conteúdo ---------- */
 
 main {
   max-width: 800px;
@@ -52,13 +99,37 @@ main {
   padding: 20px;
 }
 
+.centro {
+  text-align: center;
+}
+
+.centro button {
+  margin-left: auto;
+  margin-right: auto;
+}
+
+.ilustracao {
+  display: block;
+  width: 100%;
+  max-width: 280px;
+  margin: 0 auto var(--espaco-m);
+}
+
+.atalhos {
+  list-style: none;
+  padding: 0;
+}
+
+/* ---------- Formulários ---------- */
+
 label {
   display: block;
   margin-top: 10px;
 }
 
 input,
-textarea {
+textarea,
+select {
   width: 100%;
   max-width: 400px;
   padding: 8px;
@@ -70,9 +141,10 @@ textarea {
 button {
   display: block;
   margin-top: 15px;
+  min-height: 44px;
   padding: 8px 20px;
   background: var(--azul);
-  color: white;
+  color: var(--branco);
   border: none;
   border-radius: 5px;
   font: inherit;
@@ -81,4 +153,89 @@ button {
 
 button:hover {
   background: var(--azul-escuro);
+}
+
+button:disabled {
+  background: var(--cinza);
+  cursor: wait;
+}
+
+.mensagem.sucesso {
+  color: var(--verde);
+}
+
+.mensagem.erro {
+  color: var(--vermelho);
+}
+
+/* ---------- Cartões de material e comentários ---------- */
+
+.lista-materiais,
+.lista-comentarios {
+  list-style: none;
+  padding: 0;
+}
+
+.cartao-material,
+.lista-comentarios li {
+  background: var(--branco);
+  border: 1px solid var(--borda);
+  border-radius: var(--raio);
+  box-shadow: var(--sombra);
+  padding: var(--espaco-m);
+  margin-bottom: var(--espaco-m);
+}
+
+/* Capa à esquerda, texto à direita */
+.cartao-material {
+  display: flex;
+  gap: var(--espaco-m);
+  align-items: flex-start;
+}
+
+.capa {
+  width: 6rem;
+  height: 9rem;
+  object-fit: cover;
+  border-radius: 4px;
+  flex-shrink: 0;
+}
+
+.cartao-material h2 {
+  margin: 0;
+  font-size: 1.25rem;
+}
+
+.cartao-material a {
+  margin-right: var(--espaco-m);
+}
+
+/* "Mandar mensagem" e "Responder" (abre e fecha) */
+.caixa-mensagem {
+  margin-top: var(--espaco-p);
+}
+
+.caixa-mensagem summary {
+  color: var(--azul);
+  cursor: pointer;
+}
+
+.detalhes {
+  color: var(--cinza);
+  font-size: 0.9rem;
+}
+
+.tags {
+  list-style: none;
+  padding: 0;
+}
+
+.tags li {
+  display: inline-block;
+  background: var(--azul-claro);
+  color: var(--azul);
+  border-radius: var(--raio);
+  padding: 0 var(--espaco-p);
+  margin-right: var(--espaco-p);
+  font-size: 0.9rem;
 }

@@ -1,0 +1,15 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 64 64" role="img" aria-label="Corvus Codex">
+  <path fill="#184876" d="M4 50.6 32 54.2 60 50.6 60 58.4 32 62 4 58.4Z"/>
+  <path fill="#FFFFFF" d="M6.4 50 32 53.4V59.6L6.4 56.2Z"/>
+  <path fill="#EEF5FB" d="M57.6 50 32 53.4V59.6L57.6 56.2Z"/>
+  <path stroke="#ADCDEB" stroke-width=".8" fill="none" d="M36.4 54.6 54 52.2M36.4 56.8 54 54.4M20 54.4 27.6 55.4M22 56.6 27.6 57.4"/>
+  <path fill="#0D2741" d="M57.5 17.6 46.4 12.6 42.4 8.4 35.6 9 31 13.6 26.4 22 21.6 33 12 47.6 7.6 55.4 15.6 51.6 24 45.4 34 45.6 40.8 39.2 45 29.6 46.2 21.2Z"/>
+  <path fill="#184876" d="M57.5 17.6 46.4 12.6 46.2 21.2Z"/>
+  <path fill="#13385B" d="M57.5 17.6 46.2 21.2 46.8 18.4Z"/>
+  <path fill="#2A6FB0" d="M30.4 18.6 41.6 26.4 24.6 34.6Z"/>
+  <path fill="#1F5A93" d="M24.6 34.6 41.6 26.4 37.6 37.8 26.6 45.2 13.4 51.8Z"/>
+  <path fill="#7FAFDC" d="M30.4 18.6 35.6 22.2 27 27.8Z"/>
+  <circle cx="41.6" cy="13.8" r="2.1" fill="#fff"/>
+  <circle cx="42.1" cy="13.8" r="1.05" fill="#0D2741"/>
+  <path stroke="#0D2741" stroke-width="2" stroke-linecap="round" fill="none" d="M31.2 45.4 30.8 53M36.4 44.6 37 52.6"/>
+</svg>
