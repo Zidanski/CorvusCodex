@@ -6,3 +6,6 @@ data/banco.json
 # Arquivos temporarios do Firebase CLI
 .firebase/
 firebase-debug.log
+
+# Anotacoes e guias locais (nao vao para o GitHub)
+*.md
