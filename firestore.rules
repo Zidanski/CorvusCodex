@@ -1,0 +1,59 @@
+rules_version = '2';
+
+// Regras do Corvus Codex: quem protege os dados é este arquivo, não o JavaScript do site.
+service cloud.firestore {
+  match /databases/{database}/documents {
+
+    match /materiais/{id} {
+      // Só quem entrou com o Google vê o acervo
+      allow read: if request.auth != null;
+
+      // Criar: logado, em nome próprio e com título de verdade
+      allow create: if request.auth != null
+                    && request.resource.data.uid == request.auth.uid
+                    && request.resource.data.titulo is string
+                    && request.resource.data.titulo.size() > 0
+                    && request.resource.data.titulo.size() <= 150;
+
+      // Editar ou apagar: só o dono (e não pode passar o material para outra pessoa)
+      allow update: if request.auth != null
+                    && resource.data.uid == request.auth.uid
+                    && request.resource.data.uid == request.auth.uid;
+      allow delete: if request.auth != null
+                    && resource.data.uid == request.auth.uid;
+    }
+
+    match /comentarios/{id} {
+      allow read: if request.auth != null;
+
+      allow create: if request.auth != null
+                    && request.resource.data.uid == request.auth.uid
+                    && request.resource.data.materialId is string
+                    && request.resource.data.texto is string
+                    && request.resource.data.texto.size() > 0
+                    && request.resource.data.texto.size() <= 1000;
+
+      allow delete: if request.auth != null
+                    && resource.data.uid == request.auth.uid;
+    }
+
+    // Mensagens particulares entre dois usuários
+    match /mensagens/{id} {
+      // Só quem mandou e quem recebeu conseguem ler
+      allow read: if request.auth != null
+                  && (resource.data.paraUid == request.auth.uid || resource.data.deUid == request.auth.uid);
+
+      // Mandar: logado, em nome próprio
+      allow create: if request.auth != null
+                    && request.resource.data.deUid == request.auth.uid
+                    && request.resource.data.paraUid is string
+                    && request.resource.data.texto is string
+                    && request.resource.data.texto.size() > 0
+                    && request.resource.data.texto.size() <= 1000;
+
+      // Apagar: só quem recebeu
+      allow delete: if request.auth != null
+                    && resource.data.paraUid == request.auth.uid;
+    }
+  }
+}
