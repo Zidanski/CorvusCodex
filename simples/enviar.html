@@ -4,29 +4,68 @@
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <title>Enviar material - Corvus Codex</title>
+  <link rel="icon" href="img/favicon.svg" type="image/svg+xml">
+  <link rel="icon" href="img/favicon-32.png" sizes="32x32">
+  <link rel="apple-touch-icon" href="img/apple-touch-icon.png">
   <link rel="stylesheet" href="style.css">
 </head>
 <body>
-  <nav>
-    <a href="index.html">Início</a>
-    <a href="acervo.html">Acervo</a>
-    <a href="login.html">Login e Cadastro</a>
-    <a href="pesquisa.html">Pesquisa</a>
-    <a href="enviar.html">Enviar material</a>
-    <a href="comentarios.html">Comentários</a>
-  </nav>
+  <header class="topo">
+    <a href="index.html"><img class="logo" src="img/logo-horizontal-branco.svg" alt="Corvus Codex - página inicial"></a>
+    <nav>
+      <a href="index.html">Início</a>
+      <a href="acervo.html">Acervo</a>
+      <a href="pesquisa.html">Pesquisa</a>
+      <a href="enviar.html" aria-current="page">Enviar material</a>
+      <a href="comentarios.html">Comentários</a>
+      <a href="info.html">Info</a>
+    </nav>
+    <div class="usuario">
+      <span id="nome-usuario"></span>
+      <button type="button" id="botao-sair" class="botao-sair">Sair</button>
+    </div>
+  </header>
 
   <main>
     <h1>Enviar material</h1>
-    <form>
+    <img class="ilustracao" src="img/enviar.svg" alt="">
+    <form id="formulario-envio">
       <label for="titulo">Título</label>
-      <input type="text" id="titulo">
+      <input type="text" id="titulo" maxlength="150" required>
+
+      <label for="autor">Autor</label>
+      <input type="text" id="autor" maxlength="100" required>
+
+      <label for="tipo">Tipo</label>
+      <select id="tipo" required>
+        <option value="Livro">Livro</option>
+        <option value="Resumo">Resumo</option>
+        <option value="Anotação">Anotação</option>
+        <option value="Lista de exercícios">Lista de exercícios</option>
+        <option value="Apostila">Apostila</option>
+        <option value="Outro">Outro</option>
+      </select>
+
+      <label for="disciplina">Disciplina</label>
+      <input type="text" id="disciplina" maxlength="100" required>
+
       <label for="descricao">Descrição</label>
-      <textarea id="descricao"></textarea>
-      <label for="arquivo">Arquivo</label>
-      <input type="file" id="arquivo">
-      <button type="submit">Enviar</button>
+      <textarea id="descricao" maxlength="1000" required></textarea>
+
+      <label for="link">Link do material (Google Drive, PDF na web...)</label>
+      <input type="url" id="link" placeholder="https://" required>
+
+      <label for="capa">Link da imagem de capa (opcional)</label>
+      <input type="url" id="capa" placeholder="https://">
+
+      <label for="tags">Tags (separadas por vírgula)</label>
+      <input type="text" id="tags" placeholder="sql, modelagem">
+
+      <button type="submit" id="botao-enviar">Enviar</button>
     </form>
+    <p id="mensagem" class="mensagem" role="status"></p>
   </main>
+
+  <script type="module" src="js/enviar.js"></script>
 </body>
 </html>
