@@ -3,40 +3,25 @@
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>Login e Cadastro - Corvus Codex</title>
+  <title>Entrar - Corvus Codex</title>
+  <link rel="icon" href="img/favicon.svg" type="image/svg+xml">
+  <link rel="icon" href="img/favicon-32.png" sizes="32x32">
+  <link rel="apple-touch-icon" href="img/apple-touch-icon.png">
   <link rel="stylesheet" href="style.css">
 </head>
 <body>
-  <nav>
-    <a href="index.html">Início</a>
-    <a href="acervo.html">Acervo</a>
-    <a href="login.html">Login e Cadastro</a>
-    <a href="pesquisa.html">Pesquisa</a>
-    <a href="enviar.html">Enviar material</a>
-    <a href="comentarios.html">Comentários</a>
-  </nav>
+  <header class="topo">
+    <img class="logo" src="img/logo-horizontal-branco.svg" alt="Corvus Codex">
+  </header>
 
-  <main>
-    <h1>Login e Cadastro</h1>
-    <h2>Login</h2>
-    <form>
-      <label for="login-email">E-mail</label>
-      <input type="email" id="login-email">
-      <label for="login-senha">Senha</label>
-      <input type="password" id="login-senha">
-      <button type="submit">Entrar</button>
-    </form>
-
-    <h2>Cadastro</h2>
-    <form>
-      <label for="cad-nome">Nome</label>
-      <input type="text" id="cad-nome">
-      <label for="cad-email">E-mail</label>
-      <input type="email" id="cad-email">
-      <label for="cad-senha">Senha</label>
-      <input type="password" id="cad-senha">
-      <button type="submit">Cadastrar</button>
-    </form>
+  <main class="centro">
+    <img class="ilustracao" src="img/corvo.svg" alt="">
+    <h1>Entrar no Corvus Codex</h1>
+    <p>A biblioteca colaborativa de estudos. Para ver, enviar e comentar materiais, entre com a sua conta Google.</p>
+    <button type="button" id="botao-google">Entrar com Google</button>
+    <p id="mensagem" class="mensagem" role="status"></p>
   </main>
+
+  <script type="module" src="js/login.js"></script>
 </body>
 </html>

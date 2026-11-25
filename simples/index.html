@@ -4,23 +4,42 @@
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <title>Início - Corvus Codex</title>
+  <link rel="icon" href="img/favicon.svg" type="image/svg+xml">
+  <link rel="icon" href="img/favicon-32.png" sizes="32x32">
+  <link rel="apple-touch-icon" href="img/apple-touch-icon.png">
   <link rel="stylesheet" href="style.css">
 </head>
 <body>
-  <nav>
-    <a href="index.html">Início</a>
-    <a href="acervo.html">Acervo</a>
-    <a href="login.html">Login e Cadastro</a>
-    <a href="pesquisa.html">Pesquisa</a>
-    <a href="enviar.html">Enviar material</a>
-    <a href="comentarios.html">Comentários</a>
-  </nav>
+  <header class="topo">
+    <a href="index.html"><img class="logo" src="img/logo-horizontal-branco.svg" alt="Corvus Codex - página inicial"></a>
+    <nav>
+      <a href="index.html" aria-current="page">Início</a>
+      <a href="acervo.html">Acervo</a>
+      <a href="pesquisa.html">Pesquisa</a>
+      <a href="enviar.html">Enviar material</a>
+      <a href="comentarios.html">Comentários</a>
+      <a href="info.html">Info</a>
+    </nav>
+    <div class="usuario">
+      <span id="nome-usuario"></span>
+      <button type="button" id="botao-sair" class="botao-sair">Sair</button>
+    </div>
+  </header>
 
-  <main>
+  <main class="centro">
     <h1>Início</h1>
-    <p align="center">Bem-vindo ao Corvus Codex.</p>
-    <p align="center">Aqui você pode explorar nosso acervo, fazer pesquisas, enviar materiais e interagir com a comunidade.</p>
+    <img class="ilustracao" src="img/inicio.svg" alt="">
+    <p id="boas-vindas">Bem-vindo ao Corvus Codex.</p>
+    <p>Aqui você pode explorar nosso acervo, fazer pesquisas, enviar materiais e interagir com a comunidade.</p>
 
+    <ul class="atalhos">
+      <li><a href="acervo.html">Ver o acervo</a></li>
+      <li><a href="pesquisa.html">Pesquisar um material</a></li>
+      <li><a href="enviar.html">Enviar um material</a></li>
+      <li><a href="comentarios.html">Deixar um comentário</a></li>
+    </ul>
   </main>
+
+  <script type="module" src="js/index.js"></script>
 </body>
 </html>
