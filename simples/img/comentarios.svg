@@ -1,0 +1,10 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 320 200">
+  <!-- balão grande -->
+  <path d="M50 30 H200 Q215 30 215 45 V115 Q215 130 200 130 H100 L70 158 V130 H50 Q35 130 35 115 V45 Q35 30 50 30 Z" fill="#1F5A93"/>
+  <path d="M60 60 H190 M60 82 H190 M60 104 H150" stroke="#EEF5FB" stroke-width="7" stroke-linecap="round"/>
+  <!-- balão pequeno -->
+  <path d="M150 100 H270 Q285 100 285 115 V160 Q285 175 270 175 H260 V198 L235 175 H150 Q135 175 135 160 V115 Q135 100 150 100 Z" fill="#EEF5FB" stroke="#0D2741" stroke-width="3"/>
+  <circle cx="180" cy="138" r="7" fill="#0D2741"/>
+  <circle cx="210" cy="138" r="7" fill="#0D2741"/>
+  <circle cx="240" cy="138" r="7" fill="#0D2741"/>
+</svg>
