@@ -1,0 +1,10 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 320 200">
+  <ellipse cx="160" cy="186" rx="120" ry="8" fill="#CBD6E0"/>
+  <!-- folha com canto dobrado -->
+  <path d="M100 20 H190 L220 50 V180 H100 Z" fill="#FFFFFF" stroke="#1F5A93" stroke-width="3"/>
+  <path d="M190 20 V50 H220" fill="#EEF5FB" stroke="#1F5A93" stroke-width="3"/>
+  <path d="M120 70 H200 M120 90 H200 M120 110 H170" stroke="#CBD6E0" stroke-width="6" stroke-linecap="round"/>
+  <!-- círculo com seta para cima -->
+  <circle cx="220" cy="140" r="38" fill="#1F5A93"/>
+  <path d="M220 160 V122 M204 136 L220 120 L236 136" stroke="#FFFFFF" stroke-width="8" stroke-linecap="round" stroke-linejoin="round" fill="none"/>
+</svg>
